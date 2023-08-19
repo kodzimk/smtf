@@ -11,6 +11,7 @@ int main()
 	shared_ptr<int>b(a);
 	shared_ptr<int>c(a);
 	
+	shared_ptr<int> k(c);
 	c.set(4);
 	
 
