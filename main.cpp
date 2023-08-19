@@ -13,7 +13,8 @@ int main()
 	
 	shared_ptr<int> k(c);
 	c.set(4);
-	
+	std::shared_ptr<int> r;
+	shared_ptr
 
 	return 0;
 }
