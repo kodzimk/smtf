@@ -1,20 +1,16 @@
 #include<iostream>
 #include"shared_ptr.h"
-
-template<class T>
-shared_ptr<T>* shared_ptr<T>::helper = nullptr;
+#include"twowaylinkedlist.h"
+#include<string>
 
 int main()
 {
 
-	shared_ptr<int> a(1);
-	shared_ptr<int>b(a);
-	shared_ptr<int>c(a);
-	
-	shared_ptr<int> k(c);
-	c.set(4);
-	std::shared_ptr<int> r;
-	shared_ptr
-
+	TLinkedList<int> a(1);
+	a.push_front(2);
+	for (int i = 0; i < a.size(); i++)
+	{
+		std::cout << a.at(i) << " ";
+	}
 	return 0;
 }

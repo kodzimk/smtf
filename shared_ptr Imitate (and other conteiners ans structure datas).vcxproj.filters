@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="linkedlists">
+      <UniqueIdentifier>{96f87b53-872d-441b-ae24-84eb4db57811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared_ptr">
+      <UniqueIdentifier>{f634857e-a769-44e0-adb5-09741525452c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{618442c8-3fc6-4d09-a8f2-bef889eeaa9c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="shared_ptr.h">
+      <Filter>shared_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="twowaylinkedlist.h">
+      <Filter>linkedlists</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="twowaylinkedlist.cpp">
+      <Filter>linkedlists</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

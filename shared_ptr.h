@@ -34,8 +34,8 @@ template<class T>
             
         }
 
-
     public:
+
         ~shared_ptr() {
             if (ownCount == 0){
                 std::cout << "I havent a friend\n";
@@ -59,8 +59,7 @@ template<class T>
         {
 
         }
-    public:
-        bool can = false;
+
         shared_ptr& operator=(shared_ptr<T>& myObj) {
             if (myObj.pObj != helper.pObj&&helper.ownCount>0)
             {
@@ -69,6 +68,7 @@ template<class T>
             count++;
             return myObj;                  
         }
+
         void swap(const shared_ptr<T> &myObj)
         {
             if (ownCount == 0)
@@ -94,12 +94,11 @@ template<class T>
             helper.pObj = myObj.pObj;
             
         }
-    public:
+
         shared_ptr(T myObj) {
             value = myObj;
             pObj = &value;
         }
-    public:
         shared_ptr(shared_ptr<T> &myObj) {
             helper = &myObj;
             pObj = myObj.pObj;
@@ -112,7 +111,6 @@ template<class T>
           
             return (*pObj);
         }
-    public:
         void set(T value)
         {
             (*helper).ownCount = 0;
@@ -134,13 +132,12 @@ template<class T>
             pObj = &value;
         }
 
-        public:
          int operator[](int index)
         {
             pObj += index;
             return (*pObj);
         }
-         public:
+
         bool operator==(const shared_ptr<T> &ref)
         {
             if (ref.pObj == pObj)
@@ -158,7 +155,8 @@ template<class T>
 template<typename T>
 int shared_ptr<T>::count = 0;
 
-
+template<class T>
+shared_ptr<T>* shared_ptr<T>::helper = nullptr;
 
 
 
