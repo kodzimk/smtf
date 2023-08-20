@@ -15,16 +15,10 @@
     <ClInclude Include="shared_ptr.h">
       <Filter>shared_ptr</Filter>
     </ClInclude>
-    <ClInclude Include="twowaylinkedlist.h">
-      <Filter>linkedlists</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
-    </ClCompile>
-    <ClCompile Include="twowaylinkedlist.cpp">
-      <Filter>linkedlists</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

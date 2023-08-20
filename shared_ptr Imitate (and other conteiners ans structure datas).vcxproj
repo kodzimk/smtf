@@ -128,11 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="twowaylinkedlist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shared_ptr.h" />
-    <ClInclude Include="twowaylinkedlist.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
