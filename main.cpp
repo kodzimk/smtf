@@ -211,7 +211,7 @@ public:
 
 	void push_front(T value)
 	{
-		T* a = new int[size];
+		T* a = new T[size];
 		for (int i = 0; i < size; i++)
 		{
 			a[i] = arrayRef[i][0];
@@ -543,53 +543,40 @@ public:
 	void add(T value)
 	{
 		size++;
-		T** newArray = new T * [size];
-		int index = 0;
-		for (int i = 0; i < size; i++)
+		T*a = new int[size];
+		
+		for (int i = 0; i < size-1; i++)
 		{
-			newArray[i] = new T[1];
-			if (i == 0)
-				newArray[i][0] = value;
-			else
-			{
-				newArray[i][0] = refArray[index][0];
-				index++;
-			}
+			a[i] = refArray[i][0];
+		
 		}
-
-		size--;
-		for (int i = 0; i < size; i++)
+		for (size_t i = 0; i < size-1; i++)
 		{
 			delete[]refArray[i];
 		}
-
 		delete[]refArray;
 
-		size++;
-
-		refArray = new T * [size];
-
+		refArray = new int* [size];
 		for (int i = 0; i < size; i++)
 		{
-			ref[i] = new T[1];
+			refArray[i] = new T[1];
+			refArray[i][0] = 0;
 		}
-
-		refArray = sort(newArray, size, value);
-
 		for (int i = 0; i < size; i++)
 		{
-			newArray[i][0] = 0;
-
-			delete[]newArray[i];
+			if (i != 0)
+				refArray[i][0] = a[i];
 		}
-
-		delete[]newArray;
+		refArray[0][0] = value;
+	
+		refArray = sort(refArray, size, value);
+		delete[]a;
 
 	}
 	void remove()
 	{
 		size--;
-		T** newArray = new T * [size];
+		T** newArray = new T*[size];
 
 		for (int i = 0; i < size; i++)
 		{
@@ -603,13 +590,13 @@ public:
 
 		delete[]refArray;
 
-		ref = new T * [size];
+		refArray = new T * [size];
 
-		for (size_t i = 0; i < size; i++)
+		for (int i = 0; i < size; i++)
 		{
-			ref[i] = new T[size];
-			ref[i][0] = newArray[i][0];
-			newArray[i][0] = 0;
+			refArray[i] = new T[size];
+			refArray[i][0] = newArray[i][0];
+			newArray[i] = 0;
 			delete[]newArray[i];
 		}
 
@@ -618,15 +605,14 @@ public:
 	}
 	T last()
 	{
-		return refArray[size - 1][0];
+		T* ref = refArray[size - 1];
+		return {*ref};
 	}
 
 private:
 	T** sort(T** newAray, int size, T value)
 	{
-		int previous = 0;
 		int valueOf = 0;
-		int next = 0;
 		for (int i = 0; i < size; i++)
 		{
 			if (i != 0 && newAray[i - 1][0] > newAray[i][0])
@@ -644,7 +630,11 @@ private:
 int main()
 {
 	Stack_WP<int> a;
-	a.add(1);
-	cout << a.last();
+	a.add(3);
+	a.add(2);
+	
+	std::cout << a.last();
+	
+	std::cout << a.last();
 	return 0;
 }
