@@ -20,5 +20,11 @@
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="BinaryTreeAndBinaryHeap.cpp">
+      <Filter>shared_ptr</Filter>
+    </ClCompile>
+    <ClCompile Include="HashTabke.cpp">
+      <Filter>shared_ptr</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
